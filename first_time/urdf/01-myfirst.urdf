@@ -1,11 +1,11 @@
 <?xml version='1.0'?>
 <robot name="fourwheelrobot">
-<!--<link name="base_footprint" />
+<link name="base_footprint" />
 
 <joint name="base_footprint_joint" type="fixed">
   <parent link="base_footprint" />
   <child link="base_link" />
-</joint>-->
+</joint>
   <link name="base_link">
     <visual>
       <origin xyz="0 0 0.25" rpy="0 0 0" />
@@ -172,6 +172,13 @@
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
       <robotBaseFrame>base_link</robotBaseFrame>
+      <publishWheelTF>false</publishWheelTF>
+      <publishWheelJointState>false</publishWheelJointState>
+      <rosDebugLevel>na</rosDebugLevel>
+      <wheelAcceleration>0</wheelAcceleration>
+      <wheelTorque>5</wheelTorque>
+      <odometrySource>world</odometrySource>
+      <publishTf>1</publishTf>
      </plugin>
     </gazebo>
 </robot>
