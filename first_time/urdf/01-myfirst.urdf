@@ -158,27 +158,19 @@
 
 	
 <gazebo>
-     <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
-      <alwaysOn>true</alwaysOn>
-      <updateRate>20</updateRate>
-      <leftJoint>joint_wheel2</leftJoint>
-      <rightJoint>joint_wheel1</rightJoint>
-      <leftJoint>joint_wheel4</leftJoint>
-      <rightJoint>joint_wheel3</rightJoint>
-      <wheelSeparation>0.6</wheelSeparation>
-      <wheelDiameter>0.4</wheelDiameter>
-      <torque>0.1</torque>
-      <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
-      <robotBaseFrame>base_link</robotBaseFrame>
-      <publishWheelTF>false</publishWheelTF>
-      <publishWheelJointState>false</publishWheelJointState>
-      <rosDebugLevel>na</rosDebugLevel>
-      <wheelAcceleration>0</wheelAcceleration>
-      <wheelTorque>5</wheelTorque>
-      <odometrySource>world</odometrySource>
-      <publishTf>1</publishTf>
+     <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>20</updateRate>
+    <robotNamespace>fourwheelrobot</robotNamespace>
+    <leftJoint>joint_wheel2</leftJoint>
+    <rightJoint>joint_wheel1</rightJoint>
+    <leftJoint>joint_wheel4</leftJoint>
+    <rightJoint>joint_wheel3</rightJoint>
+    <wheelSeparation>0.6</wheelSeparation>
+    <wheelDiameter>0.4</wheelDiameter>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <torque>20</torque>
+    <topicName>cmd_vel</topicName>
+    <broadcastTF>false</broadcastTF>
      </plugin>
     </gazebo>
 </robot>
