@@ -159,18 +159,18 @@
 	
 <gazebo>
      <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
-    <updateRate>20</updateRate>
+    <updateRate>100</updateRate>
     <robotNamespace>fourwheelrobot</robotNamespace>
-    <leftJoint>joint_wheel2</leftJoint>
-    <rightJoint>joint_wheel1</rightJoint>
-    <leftJoint>joint_wheel4</leftJoint>
-    <rightJoint>joint_wheel3</rightJoint>
+    <leftFrontJoint>wheel2</leftFrontJoint>
+    <rightFrontJoint>wheel1</rightFrontJoint>
+    <leftRearJoint>wheel4</leftRearJoint>
+    <rightRearJoint>wheel3</rightRearJoint>
     <wheelSeparation>0.6</wheelSeparation>
     <wheelDiameter>0.4</wheelDiameter>
     <robotBaseFrame>base_link</robotBaseFrame>
     <torque>20</torque>
     <topicName>cmd_vel</topicName>
-    <broadcastTF>false</broadcastTF>
+    <broadcastTF>1</broadcastTF>
      </plugin>
     </gazebo>
 </robot>
