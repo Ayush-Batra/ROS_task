@@ -1,24 +1,24 @@
 <?xml version='1.0'?>
-<robot name="fourwheelrobot">
-<link name="base_footprint" />
 
-<joint name="base_footprint_joint" type="fixed">
-  <parent link="base_footprint" />
-  <child link="base_link" />
-</joint>
+<robot name="fourwheelrobot">
+
+  <link name="base_footprint" />
+
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint" />
+    <child link="base_link" />
+  </joint>
+  
   <link name="base_link">
     <visual>
-      <origin xyz="0 0 0.25" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
           <box size="1 0.5 0.2"/>
       </geometry>
-      <material name="white">
-<color rgba="1 1 1 1"/>
-      </material>
     </visual>
-<collision>
+    <collision>
       <geometry>
-        <box size="1 1.5 0.2"/>
+        <box size="1 0.5 0.2"/>
       </geometry>
     </collision>
     <inertial>
@@ -26,51 +26,42 @@
       <inertia ixx="0.2604" ixy="0.0" ixz="0.0" iyy="0.8854" iyz="0.0" izz="1.041"/>
     </inertial>
   </link>
+
   <link name="wheel1">
     <visual>
       <origin xyz="0 0 0" rpy="1.570795 0 0" />
       <geometry>
-          <cylinder length="0.1" radius="0.2" />
+          <cylinder length="0.1" radius="0.1" />
       </geometry>
-      <material name="red">
-      </material>
     </visual>
-<collision>
+    <collision>
       <geometry>
-        <cylinder length="0.1" radius="0.3" />
+        <cylinder length="0.1" radius="0.1" />
       </geometry>
     </collision>
     <inertial>
       <mass value="3"/>
       <inertia ixx="0.0025" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0025"/>
     </inertial>
-
   </link>
+
   <joint name="joint_wheel1" type="continuous">
     <parent link="base_link"/>
     <child link="wheel1"/>
-    <origin xyz="0.25 -0.30 0.2" rpy="0 0 0" /> 
+    <origin xyz="0.25 -0.30 0" rpy="0 0 0" /> 
     <axis xyz="0 1 0" rpy="0 0 0" />
-<limit effort="10000" velocity="1000"/>
-		<joint_properties damping="1.0" friction="1.0" />
   </joint>  
-<gazebo reference="wheel1">
-      		
-      		<material></material>
-    	</gazebo>
     
   <link name="wheel3">
     <visual>
       <origin xyz="0 0 0" rpy="1.570795 0 0" />
       <geometry>
-          <cylinder length="0.1" radius="0.2" />
+          <cylinder length="0.1" radius="0.1" />
       </geometry>
-      <material name="red"/>
-<color rgba="1 0 0 0"/>
     </visual>
-<collision>
+    <collision>
       <geometry>
-        <cylinder length="0.1" radius="0.3" />
+        <cylinder length="0.1" radius="0.1" />
       </geometry>
     </collision>
     <inertial>
@@ -78,31 +69,24 @@
       <inertia ixx="0.0025" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0025"/>
     </inertial>
   </link>
+
   <joint name="joint_wheel3" type="continuous">
     <parent link="base_link"/>
     <child link="wheel3"/>
-    <origin xyz="-0.25 -0.30 0.2" rpy="0 0 0" /> 
+    <origin xyz="-0.25 -0.30 0" rpy="0 0 0" /> 
     <axis xyz="0 1 0" rpy="0 0 0" />
-<limit effort="10000" velocity="1000"/>
-		<joint_properties damping="1.0" friction="1.0" />
   </joint>  
-<gazebo reference="wheel3">
-      		
-      		<material></material>
-    	</gazebo>
-    	
+      
   <link name="wheel2">
     <visual>
       <origin xyz="0 0 0" rpy="1.570795 0 0" />
       <geometry>
-          <cylinder length="0.1" radius="0.2" />
+          <cylinder length="0.1" radius="0.1" />
       </geometry>
-      <material name="red"/>
-<color rgba="1 0 0 0"/>
     </visual>
-<collision>
+    <collision>
       <geometry>
-        <cylinder length="0.1" radius="0.3" />
+        <cylinder length="0.1" radius="0.1" />
       </geometry>
     </collision>
     <inertial>
@@ -113,27 +97,20 @@
   <joint name="joint_wheel2" type="continuous">
     <parent link="base_link"/>
     <child link="wheel2"/>
-    <origin xyz="0.25 0.30 0.2" rpy="0 0 0" /> 
+    <origin xyz="0.25 0.30 0" rpy="0 0 0" /> 
     <axis xyz="0 1 0" rpy="0 0 0" />
-<limit effort="10000" velocity="1000"/>
-		<joint_properties damping="1.0" friction="1.0" />
   </joint>
-<gazebo reference="wheel2">
-      		<material></material>
-    	</gazebo>
-    	
+      
   <link name="wheel4">
     <visual>
       <origin xyz="0 0 0" rpy="1.570795 0 0" />
       <geometry>
-          <cylinder length="0.1" radius="0.2" />
+          <cylinder length="0.1" radius="0.1" />
       </geometry>
-      <material name="red"/>
-<color rgba="1 0 0 0"/>
     </visual>
-<collision>
+    <collision>
       <geometry>
-        <cylinder length="0.1" radius="0.3" />
+        <cylinder length="0.1" radius="0.1" />
       </geometry>
     </collision>
     <inertial>
@@ -144,35 +121,26 @@
   <joint name="joint_wheel4" type="continuous">
     <parent link="base_link"/>
     <child link="wheel4"/>
-    <origin xyz="-0.25 0.30 0.2" rpy="0 0 0" /> 
+    <origin xyz="-0.25 0.30 0" rpy="0 0 0" /> 
     <axis xyz="0 1 0" rpy="0 0 0" />
-<limit effort="10000" velocity="1000"/>
-		<joint_properties damping="1.0" friction="1.0" />
-
   </joint>
-<gazebo reference="wheel4">
-      		
-      		<material></material>
-    	</gazebo>
 
+  <gazebo>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <updateRate>100</updateRate>
+      <alwaysOn>true</alwaysOn>
+      <leftFrontJoint>joint_wheel2</leftFrontJoint>
+      <rightFrontJoint>joint_wheel1</rightFrontJoint>
+      <leftRearJoint>joint_wheel4</leftRearJoint>
+      <rightRearJoint>joint_wheel3</rightRearJoint>
+      <commandTopic>cmd_vel</commandTopic>
+      <wheelSeparation>0.6</wheelSeparation>
+      <wheelDiameter>0.4</wheelDiameter>
+      <topicName>cmd_vel</topicName>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <torque>60</torque>
+      <broadcastTF>true</broadcastTF>
+    </plugin>
+  </gazebo>
 
-	
-<gazebo>
-     <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
-    <updateRate>100</updateRate>
-    <robotNamespace>fourwheelrobot</robotNamespace>
-    <alwaysOn>true</alwaysOn>
-    <leftFrontJoint>joint_wheel2</leftFrontJoint>
-    <rightFrontJoint>joint_wheel1</rightFrontJoint>
-    <leftRearJoint>joint_wheel4</leftRearJoint>
-    <rightRearJoint>joint_wheel3</rightRearJoint>
-    <commandTopic>cmd_vel</commandTopic>
-    <wheelSeparation>0.6</wheelSeparation>
-    <wheelDiameter>0.4</wheelDiameter>
-    <topicName>cmd_vel</topicName>
-    <robotBaseFrame>base_link</robotBaseFrame>
-    <torque>5</torque>
-    <broadcastTF>1</broadcastTF>
-     </plugin>
-    </gazebo>
 </robot>
