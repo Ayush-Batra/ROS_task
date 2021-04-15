@@ -46,7 +46,7 @@ class control(self):
         ange_error = final_angle-angle
         if(distance_error>distance_accuracy):
             twist_msg.linear.x = 0.5*distance_error
-            pub.publish(twsit_msg)
+            pub.publish(twist_msg)
         else:
             ctr=2
         if math.fabs(ange_error)> angle_accuracy:
